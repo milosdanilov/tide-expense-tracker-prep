@@ -1,0 +1,28 @@
+{
+  "accounts": [
+    {
+      "id": "87b1b7d3-ea2a-4cdb-b586-567cae14be2f",
+      "name": "Cash",
+      "type": "Cash",
+      "createdAt": "2025-07-18T22:01:15.830Z",
+      "amount": 500,
+      "currency": "USD"
+    },
+    {
+      "id": "4572f2d4-1de1-4649-9b2b-132cf8084f8f",
+      "name": "Main",
+      "type": "Checking account",
+      "createdAt": "2025-07-18T21:00:15.200Z",
+      "amount": 2400,
+      "currency": "USD"
+    },
+    {
+      "id": "ae4daf61-b4f4-44a3-a65a-b6bd3e9700a5",
+      "name": "For new house",
+      "type": "Savings account",
+      "createdAt": "2025-07-18T21:30:05.530Z",
+      "amount": 20600,
+      "currency": "USD"
+    }
+  ]
+}
