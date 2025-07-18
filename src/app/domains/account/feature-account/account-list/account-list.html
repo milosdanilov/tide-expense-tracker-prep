@@ -1,0 +1,50 @@
+<section class="account-list-container">
+  <mat-card appearance="outlined">
+    <mat-card-header>
+      <mat-card-title>Accounts</mat-card-title>
+    </mat-card-header>
+    <mat-card-actions>
+      <button class="account-list__add-btn" matButton="tonal">+ Add</button>
+    </mat-card-actions>
+  </mat-card>
+
+  <mat-card appearance="outlined">
+    <mat-card-content>
+      <mat-list>
+        <mat-list-item>
+          <mat-icon matListItemIcon>folder</mat-icon>
+          <div matListItemTitle class="account-card-content">
+            <div class="account-name">Cash</div>
+            <div class="account-type">Type</div>
+            <span class="account-amount">{{ "500" | currency }}</span>
+          </div>
+          <div matListItemMeta>
+            <button matIconButton><mat-icon>edit</mat-icon></button>
+          </div>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon matListItemIcon>folder</mat-icon>
+          <div matListItemTitle class="account-card-content">
+            <div class="account-name">Cash</div>
+            <div class="account-type">Type</div>
+            <span class="account-amount">{{ "500" | currency }}</span>
+          </div>
+          <div matListItemMeta>
+            <button matIconButton><mat-icon>edit</mat-icon></button>
+          </div>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon matListItemIcon>folder</mat-icon>
+          <div matListItemTitle class="account-card-content">
+            <div class="account-name">Cash</div>
+            <div class="account-type">Type</div>
+            <span class="account-amount">{{ "500" | currency }}</span>
+          </div>
+          <div matListItemMeta>
+            <button matIconButton><mat-icon>edit</mat-icon></button>
+          </div>
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
+</section>

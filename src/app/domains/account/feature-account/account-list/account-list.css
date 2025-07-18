@@ -1,0 +1,21 @@
+.account-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
+.account-list__add-btn {
+  display: flex;
+  width: 100%;
+}
+
+mat-card {
+  padding: 1rem;
+}
+
+.account-card-content {
+  display: flex;
+  justify-content: space-between;
+}
