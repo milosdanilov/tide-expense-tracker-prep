@@ -9,7 +9,7 @@ export const routes: Routes = [
   {
     path: 'accounts',
     loadChildren: () =>
-      import('./domains/account/feature-account/account.routes').then(
+      import('./domains/accounts/feature-accounts/accounts.routes').then(
         (r) => r.routes
       ),
   },

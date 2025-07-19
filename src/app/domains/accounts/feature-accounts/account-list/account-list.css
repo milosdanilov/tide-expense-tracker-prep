@@ -19,3 +19,10 @@ mat-card {
   display: flex;
   justify-content: space-between;
 }
+
+.error-message {
+  display: flex;
+  font-size: large;
+  justify-content: center;
+  align-items: center;
+}
