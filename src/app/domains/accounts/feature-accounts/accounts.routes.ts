@@ -4,7 +4,9 @@ export const routes: Routes = [
   {
     path: '',
     loadComponent: () =>
-      import('./account-list/account-list').then((c) => c.AccountList),
+      import('./accounts-overview/accounts-overview').then(
+        (c) => c.AccountsOverview
+      ),
     title: 'Accounts',
   },
 ];

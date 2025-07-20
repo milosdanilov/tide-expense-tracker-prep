@@ -1,6 +1,6 @@
-export type AccountType = 'Cash' | 'Checking account' | 'Savings account';
+export type AccountType = 'Cash' | 'CheckingAccount' | 'SavingsAccount';
 
-export type CurrencyType = 'USD';
+export type CurrencyType = 'USD' | 'EUR';
 
 export interface AccountDTO {
   id: string;
@@ -10,3 +10,5 @@ export interface AccountDTO {
   amount: number;
   currency: CurrencyType;
 }
+
+export type AccountEditPayload = Pick<AccountDTO, 'id' | 'name' | 'type'>;

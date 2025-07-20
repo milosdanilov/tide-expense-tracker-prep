@@ -1,6 +1,12 @@
-export type AccountType = 'Cash' | 'Checking account' | 'Savings account';
+export const AccountTypeEnum = {
+  Cash: 'Cash',
+  CheckingAccount: 'Checking account',
+  SavingsAccount: 'Savings account',
+} as const;
 
-export type CurrencyType = 'USD';
+export type AccountType = keyof typeof AccountTypeEnum;
+
+export type CurrencyType = 'USD' | 'EUR';
 
 export interface Account {
   id: string;

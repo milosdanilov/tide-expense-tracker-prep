@@ -15,11 +15,6 @@ mat-card {
   padding: 1rem;
 }
 
-.account-card-content {
-  display: flex;
-  justify-content: space-between;
-}
-
 .error-message {
   display: flex;
   font-size: large;

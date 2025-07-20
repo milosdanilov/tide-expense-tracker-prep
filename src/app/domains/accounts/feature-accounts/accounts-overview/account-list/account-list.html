@@ -1,0 +1,22 @@
+@if (accounts(); as accounts) {
+<mat-list>
+  @for (account of accounts; track $index) {
+  <mat-list-item>
+    <mat-icon matListItemIcon>folder</mat-icon>
+    <div matListItemTitle class="account-card-content">
+      <div>{{ account.name }}</div>
+      <div>{{ account.type }}</div>
+      <span>{{ account.amount | currency }}</span>
+    </div>
+    <div matListItemMeta>
+      <button matIconButton (click)="onEdit(account)">
+        <mat-icon>edit</mat-icon>
+      </button>
+    </div>
+  </mat-list-item>
+
+  @if (accounts.length - 1 !== $index) {
+  <mat-divider />
+  } }
+</mat-list>
+}

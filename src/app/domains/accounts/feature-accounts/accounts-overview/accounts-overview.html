@@ -1,0 +1,20 @@
+<section class="account-list-container">
+  <mat-card appearance="outlined">
+    <mat-card-header>
+      <mat-card-title>Accounts</mat-card-title>
+    </mat-card-header>
+    <mat-card-actions>
+      <button class="account-list__add-btn" matButton="tonal">+ Add</button>
+    </mat-card-actions>
+  </mat-card>
+
+  <mat-card appearance="outlined">
+    <mat-card-content>
+      @if (error(); as errorMessage) {
+      <span class="error-message">{{ errorMessage }}</span>
+      } @else {
+      <app-account-list [accounts]="accounts()" (edit)="editAccount($event)" />
+      }
+    </mat-card-content>
+  </mat-card>
+</section>
