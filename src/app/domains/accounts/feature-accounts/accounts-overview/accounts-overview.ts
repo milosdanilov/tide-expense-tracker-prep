@@ -54,6 +54,7 @@ export class AccountsOverview {
     this.dialog
       .open(AccountEdit, { data: { account: null } })
       .afterClosed()
+      .pipe(filter((result) => !!result))
       .subscribe((result) => this.store.addAccount(result));
   }
 }
