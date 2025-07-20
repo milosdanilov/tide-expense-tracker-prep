@@ -5,19 +5,20 @@ import {
   setAllEntities,
   withEntities,
   updateEntity,
+  setEntity,
 } from '@ngrx/signals/entities';
 import { Account } from '../data-access/accounts.model';
 import { inject } from '@angular/core';
 import { AccountsService } from '../data-access/accounts.service';
-import { exhaustMap, pipe, switchMap, tap } from 'rxjs';
+import { exhaustMap, pipe, tap } from 'rxjs';
 import {
   setError,
   setFulfilled,
   setPending,
   withRequestStatus,
 } from '../../shared/state/request-status.feature';
-import { AccountEditPayload } from '../data-access/accounts.dto';
 import { NotificationService } from '../../shared/notification/notification';
+import { AccountCreateForm, AccountFormEdit } from './account.model';
 
 export const AccountsStore = signalStore(
   { providedIn: 'root' },
@@ -49,7 +50,7 @@ export const AccountsStore = signalStore(
           })
         )
       ),
-      editAccount: rxMethod<{ id: string; payload: AccountEditPayload }>(
+      editAccount: rxMethod<{ id: string; payload: AccountFormEdit }>(
         pipe(
           tap(() => patchState(store, setPending())),
           exhaustMap(({ id, payload }) => {
@@ -62,6 +63,22 @@ export const AccountsStore = signalStore(
                     `Error while editing account: ${id}`
                   );
                 },
+              })
+            );
+          })
+        )
+      ),
+      addAccount: rxMethod<AccountCreateForm>(
+        pipe(
+          tap(() => patchState(store, setPending())),
+          exhaustMap((payload) => {
+            return accountsService.create(payload).pipe(
+              tapResponse({
+                next: (account) => patchState(store, setEntity(account)),
+                error: () =>
+                  notificationService.showError(
+                    `Error while creating a new account`
+                  ),
               })
             );
           })

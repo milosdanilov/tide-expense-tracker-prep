@@ -4,7 +4,13 @@
       <mat-card-title>Accounts</mat-card-title>
     </mat-card-header>
     <mat-card-actions>
-      <button class="account-list__add-btn" matButton="tonal">+ Add</button>
+      <button
+        class="account-list__add-btn"
+        matButton="tonal"
+        (click)="addAccount()"
+      >
+        + Add
+      </button>
     </mat-card-actions>
   </mat-card>
 

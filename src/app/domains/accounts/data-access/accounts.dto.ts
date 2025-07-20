@@ -6,9 +6,11 @@ export interface AccountDTO {
   id: string;
   name: string;
   type: AccountType;
-  createdAt: Date;
+  createdAt: string;
   amount: number;
   currency: CurrencyType;
 }
 
 export type AccountEditPayload = Pick<AccountDTO, 'id' | 'name' | 'type'>;
+
+export type AccountAddPayload = Pick<AccountDTO, 'name' | 'type' | 'amount'>;

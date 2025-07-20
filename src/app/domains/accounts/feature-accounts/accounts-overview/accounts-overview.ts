@@ -49,4 +49,11 @@ export class AccountsOverview {
       .pipe(filter((result) => !!result))
       .subscribe((result) => this.store.editAccount({ id, payload: result }));
   }
+
+  addAccount() {
+    this.dialog
+      .open(AccountEdit, { data: { account: null } })
+      .afterClosed()
+      .subscribe((result) => this.store.addAccount(result));
+  }
 }
