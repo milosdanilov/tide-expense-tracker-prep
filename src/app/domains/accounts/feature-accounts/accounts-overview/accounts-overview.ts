@@ -13,6 +13,7 @@ import {
   AccountEditDialogData,
 } from './account-edit/account-edit';
 import { filter } from 'rxjs';
+import { AccountCreateForm, AccountFormEdit } from '../account.model';
 
 @Component({
   selector: 'app-accounts-overview',
@@ -40,7 +41,7 @@ export class AccountsOverview {
 
   editAccount({ id }: Pick<Account, 'id'>) {
     this.dialog
-      .open(AccountEdit, {
+      .open<AccountEdit, AccountEditDialogData, AccountFormEdit>(AccountEdit, {
         data: {
           account: this.store.getAccountById(id),
         } as AccountEditDialogData,
@@ -52,7 +53,10 @@ export class AccountsOverview {
 
   addAccount() {
     this.dialog
-      .open(AccountEdit, { data: { account: null } })
+      .open<AccountEdit, AccountEditDialogData, AccountCreateForm>(
+        AccountEdit,
+        { data: { account: null } }
+      )
       .afterClosed()
       .pipe(filter((result) => !!result))
       .subscribe((result) => this.store.addAccount(result));
